@@ -39,4 +39,13 @@ def bar():
     
     window.destroy()
 
+# Screen Frame 
+Frame(window,width=427,height=241,bg="#249794").place(x=0,y=0)  
+screen_button = Button(window, text="Get Started", command=bar)
+screen_button.config(width=10, height=1, border=0, fg='#249794', bg='white')
+screen_button.place(x=170,y=200)
+
 window.mainloop()
+
+
+
