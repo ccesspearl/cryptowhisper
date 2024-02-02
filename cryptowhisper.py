@@ -52,6 +52,11 @@ first_label_format=('Calibri (Body)',18,'bold')
 first_label.config(font=first_label_format)
 first_label.place(x=50,y=80)
 
+second_label=Label(window,text='WHISPER',fg='white',bg="#249794")
+second_label_format=('Calibri (Body)',18,'bold')
+second_label.config(font=second_label_format)
+second_label.place(x=155,y=82)
+
 window.mainloop()
 
 
