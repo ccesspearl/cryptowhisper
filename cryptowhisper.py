@@ -45,6 +45,13 @@ screen_button = Button(window, text="Get Started", command=bar)
 screen_button.config(width=10, height=1, border=0, fg='#249794', bg='white')
 screen_button.place(x=170,y=200)
 
+# Screen Labels 
+
+first_label=Label(window,text='CRYPTO',fg='white',bg="#249794")
+first_label_format=('Calibri (Body)',18,'bold')
+first_label.config(font=first_label_format)
+first_label.place(x=50,y=80)
+
 window.mainloop()
 
 
