@@ -30,8 +30,39 @@ screen.configure("red.Horizontal.TProgressbar", foreground='red', background='re
 progress=Progressbar(window,style="red.Horizontal.TProgressbar",orient=HORIZONTAL,length=500,mode='determinate',)
 progress.place(x=-10,y=235)
 
+# Enrypt Function 
+def encrypt():
+    password=code.get()
+
+    if password=="1234":
+        new_screen1=Toplevel(main_window)
+        new_screen1.title("Encrypted Message")
+        new_screen1.geometry("400x200")
+        new_screen1.configure(bg="#ed3833")
+
+        user_message=user_text1.get(1.0,END)
+        encode_message=user_message.encode("ascii")
+        base64_bytes=base64.b64encode(encode_message)
+        encrypt=base64_bytes.decode("ascii")
+
+        Label(new_screen1,text="Encrypt a secret message for some mystery fun! 🔒", font=("Calibri", 13, "bold"),fg="white",bg="#ed3833").place(x=10,y=5)
+        text2=Text(new_screen1,font="Rpbote 10", bg="white", relief=GROOVE, wrap=WORD, bd=0)
+        text2.place(x=10, y=40,width=380,height=150)
+
+        text2.insert(END,encrypt)
+
+    elif password=="":
+        messagebox.showerror("Encryption", "Input Password")
+
+    elif password !="1234":
+        messagebox.showerror("Encryption", "Invalid Password")
+
 # Main Window for the Cryptography Project 
 def main_screen():
+
+    global main_window
+    global code 
+    global user_text1
 
     main_window = Tk()
     main_window.geometry("375x398")
@@ -55,7 +86,7 @@ def main_screen():
     Entry(textvariable=code,width=19,bd=0,font=("arial",25),show="*").place(x=10,y=200)
 
     # Buttons in the Main Window 
-    Button(text="ENCRYPT", font=("calibri",10, "bold"),height="2", width=24, bg="#B43A17", fg="white",bd=0).place(x=10,y=255)
+    Button(text="ENCRYPT", font=("calibri",10, "bold"),height="2", width=24, bg="#B43A17", fg="white",bd=0, command=encrypt).place(x=10,y=255)
     Button(text="DECRYPT", font=("calibri",10, "bold"), height="2", width=24, bg="#208F28", fg="white", bd=0).place(x=190,y=255)
     Button(text="RESET", font=("calibri",10, "bold"),height="2", width=50,bg="#1089ff", fg="white", bd=0, command=reset).place(x=10,y=300)
         
