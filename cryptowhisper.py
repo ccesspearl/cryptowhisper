@@ -57,6 +57,11 @@ second_label_format=('Calibri (Body)',18,'bold')
 second_label.config(font=second_label_format)
 second_label.place(x=155,y=82)
 
+third_label=Label(window,text='Secret Messaging',fg='white',bg="#249794")
+third_label_format=('Calibri (Body)',13)
+third_label.config(font=third_label_format)
+third_label.place(x=50,y=110)
+
 window.mainloop()
 
 
