@@ -22,6 +22,16 @@ x_coordinate = (screen_width/2)-(window_width/2)
 y_coordinate = (screen_height/2)-(window_height/2)
 window.geometry("%dx%d+%d+%d" %(window_width,window_height,x_coordinate,y_coordinate))
 
+
+window.overrideredirect(1)
+
+screen = ttk.Style()
+screen.theme_use('clam')
+screen.configure("red.Horizontal.TProgressbar", foreground='red', background='red')
+progress=Progressbar(window,style="red.Horizontal.TProgressbar",orient=HORIZONTAL,length=500,mode='determinate',)
+progress.place(x=-10,y=235)
+
+# Progress Bar 
 def bar():
 
     loading_text = Label(window,text='Loading...', fg='white', bg="#249794")
