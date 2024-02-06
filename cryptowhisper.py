@@ -41,6 +41,12 @@ def main_screen():
     Label(text="Type text for encryption and descryption", bg= "#ffcf2f", fg="black", font=("calibri",13, "bold")).place(x=10,y=10)
     user_text1=Text(font="Robote 20", bg="white", relief=GROOVE, wrap=WORD, bd=0)
     user_text1.place(x=10,y=50,width=355,height=100)
+
+    Label(text="Type secret key for encrytion and descryption", bg= "#ffcf2f", fg="black", font=("calibri", 13, "bold")).place(x=10,y=170)
+
+    code=StringVar()
+    Entry(textvariable=code,width=19,bd=0,font=("arial",25),show="*").place(x=10,y=200)
+
     
     main_window.mainloop()  
 
