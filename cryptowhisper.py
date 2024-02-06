@@ -47,7 +47,10 @@ def main_screen():
     code=StringVar()
     Entry(textvariable=code,width=19,bd=0,font=("arial",25),show="*").place(x=10,y=200)
 
-    
+    Button(text="ENCRYPT", font=("calibri",10, "bold"),height="2", width=24, bg="#B43A17", fg="white",bd=0).place(x=10,y=255)
+    Button(text="DECRYPT", font=("calibri",10, "bold"), height="2", width=24, bg="#208F28", fg="white", bd=0).place(x=190,y=255)
+    Button(text="RESET", font=("calibri",10, "bold"),height="2", width=50,bg="#1089ff", fg="white", bd=0).place(x=10,y=300)
+        
     main_window.mainloop()  
 
 
