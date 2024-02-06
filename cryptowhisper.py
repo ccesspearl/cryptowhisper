@@ -29,6 +29,7 @@ screen.configure("red.Horizontal.TProgressbar", foreground='red', background='re
 progress=Progressbar(window,style="red.Horizontal.TProgressbar",orient=HORIZONTAL,length=500,mode='determinate',)
 progress.place(x=-10,y=235)
 
+# Main Window for the Cryptography Project 
 def main_screen():
 
     main_window = Tk()
@@ -37,6 +38,10 @@ def main_screen():
     main_window.resizable(False,False)
     main_window.configure(bg="#ffcf2f")
 
+    Label(text="Type text for encryption and descryption", bg= "#ffcf2f", fg="black", font=("calibri",13, "bold")).place(x=10,y=10)
+    user_text1=Text(font="Robote 20", bg="white", relief=GROOVE, wrap=WORD, bd=0)
+    user_text1.place(x=10,y=50,width=355,height=100)
+    
     main_window.mainloop()  
 
 
