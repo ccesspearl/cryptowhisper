@@ -39,6 +39,11 @@ def main_screen():
     main_window.resizable(False,False)
     main_window.configure(bg="#ffcf2f")
 
+    # Reset User Words 
+    def reset():
+        code.set("")
+        user_text1.delete(1.0, END)
+
     # First Text Label in the Main Window 
     Label(text="Type text for encryption and descryption", bg= "#ffcf2f", fg="black", font=("calibri",13, "bold")).place(x=10,y=10)
     user_text1=Text(font="Robote 20", bg="white", relief=GROOVE, wrap=WORD, bd=0)
@@ -52,7 +57,7 @@ def main_screen():
     # Buttons in the Main Window 
     Button(text="ENCRYPT", font=("calibri",10, "bold"),height="2", width=24, bg="#B43A17", fg="white",bd=0).place(x=10,y=255)
     Button(text="DECRYPT", font=("calibri",10, "bold"), height="2", width=24, bg="#208F28", fg="white", bd=0).place(x=190,y=255)
-    Button(text="RESET", font=("calibri",10, "bold"),height="2", width=50,bg="#1089ff", fg="white", bd=0).place(x=10,y=300)
+    Button(text="RESET", font=("calibri",10, "bold"),height="2", width=50,bg="#1089ff", fg="white", bd=0, command=reset).place(x=10,y=300)
         
     main_window.mainloop()  
 
