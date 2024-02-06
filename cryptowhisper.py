@@ -23,6 +23,7 @@ window.geometry("%dx%d+%d+%d" %(window_width,window_height,x_coordinate,y_coordi
 
 window.overrideredirect(1)
 
+# Progressing Bar
 screen = ttk.Style()
 screen.theme_use('clam')
 screen.configure("red.Horizontal.TProgressbar", foreground='red', background='red')
@@ -38,15 +39,17 @@ def main_screen():
     main_window.resizable(False,False)
     main_window.configure(bg="#ffcf2f")
 
+    # First Text Label in the Main Window 
     Label(text="Type text for encryption and descryption", bg= "#ffcf2f", fg="black", font=("calibri",13, "bold")).place(x=10,y=10)
     user_text1=Text(font="Robote 20", bg="white", relief=GROOVE, wrap=WORD, bd=0)
     user_text1.place(x=10,y=50,width=355,height=100)
 
+    # Second Text Label  in the Main Window 
     Label(text="Type secret key for encrytion and descryption", bg= "#ffcf2f", fg="black", font=("calibri", 13, "bold")).place(x=10,y=170)
-
     code=StringVar()
     Entry(textvariable=code,width=19,bd=0,font=("arial",25),show="*").place(x=10,y=200)
 
+    # Buttons in the Main Window 
     Button(text="ENCRYPT", font=("calibri",10, "bold"),height="2", width=24, bg="#B43A17", fg="white",bd=0).place(x=10,y=255)
     Button(text="DECRYPT", font=("calibri",10, "bold"), height="2", width=24, bg="#208F28", fg="white", bd=0).place(x=190,y=255)
     Button(text="RESET", font=("calibri",10, "bold"),height="2", width=50,bg="#1089ff", fg="white", bd=0).place(x=10,y=300)
