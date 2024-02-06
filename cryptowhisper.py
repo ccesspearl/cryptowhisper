@@ -29,6 +29,17 @@ screen.configure("red.Horizontal.TProgressbar", foreground='red', background='re
 progress=Progressbar(window,style="red.Horizontal.TProgressbar",orient=HORIZONTAL,length=500,mode='determinate',)
 progress.place(x=-10,y=235)
 
+def main_screen():
+
+    main_window = Tk()
+    main_window.geometry("375x398")
+    main_window.title("Secret Message")
+    main_window.resizable(False,False)
+    main_window.configure(bg="#ffcf2f")
+
+    main_window.mainloop()  
+
+
 # Progress Bar 
 def bar():
     loading_text = Label(window,text='Loading...', fg='white', bg="#17204d")
@@ -45,6 +56,7 @@ def bar():
         num = num + 1
     
     window.destroy()
+    main_screen()
 
 # Screen Frame 
 Frame(window,width=427,height=241,bg="#17204d").place(x=0,y=0)  
