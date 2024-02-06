@@ -30,6 +30,34 @@ screen.configure("red.Horizontal.TProgressbar", foreground='red', background='re
 progress=Progressbar(window,style="red.Horizontal.TProgressbar",orient=HORIZONTAL,length=500,mode='determinate',)
 progress.place(x=-10,y=235)
 
+# Decrypt Function 
+def decrypt():
+    password=code.get()
+
+    if password=="1234":
+        new_screen2=Toplevel(main_window)
+        new_screen2.title("Decrypted Message")
+        new_screen2.geometry("400x200")
+        new_screen2.configure(bg="#00bd56")
+
+        user_message=user_text1.get(1.0,END)
+        decode_message=user_message.encode("ascii")
+        base64_bytes=base64.b64decode(decode_message)
+        decrypt=base64_bytes.decode("ascii")
+
+        Label(new_screen2,text="Decode the mystery! Unveil the secret! 🔓", font=("Calibri", 13, "bold"),fg="white",bg="#00bd56").place(x=10,y=5)
+        text2=Text(new_screen2,font="Rpbote 10", bg="white", relief=GROOVE, wrap=WORD, bd=0)
+        text2.place(x=10, y=40,width=380,height=150)
+
+        text2.insert(END,decrypt)
+
+    elif password=="":
+        messagebox.showerror("Decryption", "Input Password")
+
+    elif password !="1234":
+        messagebox.showerror("Decryption", "Invalid Password")
+
+
 # Enrypt Function 
 def encrypt():
     password=code.get()
@@ -87,7 +115,7 @@ def main_screen():
 
     # Buttons in the Main Window 
     Button(text="ENCRYPT", font=("calibri",10, "bold"),height="2", width=24, bg="#B43A17", fg="white",bd=0, command=encrypt).place(x=10,y=255)
-    Button(text="DECRYPT", font=("calibri",10, "bold"), height="2", width=24, bg="#208F28", fg="white", bd=0).place(x=190,y=255)
+    Button(text="DECRYPT", font=("calibri",10, "bold"), height="2", width=24, bg="#208F28", fg="white", bd=0, command=decrypt).place(x=190,y=255)
     Button(text="RESET", font=("calibri",10, "bold"),height="2", width=50,bg="#1089ff", fg="white", bd=0, command=reset).place(x=10,y=300)
         
     main_window.mainloop()  
@@ -135,6 +163,3 @@ third_label.config(font=third_label_format)
 third_label.place(x=50,y=110)
 
 window.mainloop()
-
-
-
